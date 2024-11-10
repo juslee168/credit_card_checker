@@ -1,10 +1,16 @@
 {
     "manifest_version": 3,
-    "name": "Hello Extensions of the world!",
-    "description": "Base Level Extension",
+    "name": "Vigil Ai",
+    "description": "Finds all credit card numbers on the web page.",
     "version": "1.0",
-    "action": {
-      "default_popup": "hello.html",
-      "default_icon": "icon.png"
-    }
+    "permissions": [
+      "activeTab"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["scripts/content.js"]
+      }
+    ]
   }
+  
