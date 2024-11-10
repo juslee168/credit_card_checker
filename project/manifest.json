@@ -1,16 +1,13 @@
 {
-    "manifest_version": 3,
-    "name": "Vigil Ai",
-    "description": "Finds all credit card numbers on the web page.",
-    "version": "1.0",
-    "permissions": [
-      "activeTab"
-    ],
-    "content_scripts": [
+  "manifest_version": 3,
+  "name": "Vigil AI",
+  "version": "1.0",
+  "description": "Friendly security reminder when you are typing credit card numbers",
+  "permissions": ["scripting", "activeTab"],
+  "content_scripts": [
       {
-        "matches": ["<all_urls>"],
-        "js": ["scripts/content.js"]
+          "js": ["scripts/content.js"],
+          "matches": ["<all_urls>"]
       }
-    ]
-  }
-  
+  ]
+}

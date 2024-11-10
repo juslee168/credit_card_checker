@@ -1,43 +1,33 @@
-// content.js
-function highlightNumbers(node) {
-    if (node.nodeType === Node.TEXT_NODE) {
-      const numberMatchRegExp = /\b\d+\b/g;
-      const text = node.nodeValue;
-      const matches = text.match(numberMatchRegExp);
-      if (matches) {
-        const parent = node.parentNode;
-        const fragments = text.split(numberMatchRegExp);
-  
-        const fragment = document.createDocumentFragment();
-        fragments.forEach((fragmentText, index) => {
-          fragment.appendChild(document.createTextNode(fragmentText));
-          if (index < matches.length) {
-            const span = document.createElement('span');
-            span.className = 'highlight-number';
-            span.textContent = matches[index];
-            fragment.appendChild(span);
-          }
-        });
-  
-        parent.replaceChild(fragment, node);
-      }
-    } else {
-      node.childNodes.forEach(highlightNumbers);
+const creditCardRegex = /\b(?:\d[ -]*?){13,16}\b/;
+
+document.addEventListener("input", (event) => {
+    const target = event.target;
+    console.log("Event type:", event.type);
+
+    // Only check inputs or text areas
+    if (target.tagName === "INPUT" || target.tagName === "TEXTAREA") {
+        const text = target.value.replace(/\s|-/g, ""); // remove spaces and dashes
+
+        // Match the text with a credit card pattern
+        // if (creditCardRegex.test(text)) {
+        //     alert("Potential credit card number detected. Be cautious!");
+        // }
+
+        // underlines numbers with a credit card pattern
+        if (creditCardRegex.test(text)) {
+            target.classList.add("highlight-credit-card"); // Highlight the input
+        } else {
+            target.classList.remove("highlight-credit-card");
+        }
     }
+});
+
+
+const style = document.createElement('style');
+style.innerHTML = `
+  .highlight-credit-card {   
+    text-decoration: underline;
+    text-decoration-color: red; 
   }
-  
-  const body = document.querySelectorAll("body");
-  highlightNumbers(body);
-  
-  // Add some styles for the highlight
-  const style = document.createElement('style');
-  style.innerHTML = `
-    .highlight-number {
-      background-color: yellow;
-      font-weight: bold;
-    }
-  `;
-  document.head.appendChild(style);
-  
-  console.log('Numbers have been highlighted.');
-  
+`;
+document.head.appendChild(style);
