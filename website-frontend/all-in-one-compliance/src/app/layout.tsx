@@ -11,11 +11,7 @@ export const metadata = {
   description: 'Compliance Made Simple',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout() {
   return (
     <html lang="en">
       <body className={`${inter.className} fade-in flex flex-col min-h-screen bg-gradient-to-b from-cyan-900 via-cyan-800 to-cyan-600 text-white`}>
