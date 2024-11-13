@@ -7,14 +7,12 @@
   "content_scripts": [
       {
           "js": ["scripts/content.js"],
-          "matches": [
-              "<all_urls>"
-          ]
+          "matches": ["<all_urls>"]
       }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["bin.json"],
+      "resources": ["bin.json", "styles.css"],
       "matches": ["<all_urls>"]
     }
   ]
