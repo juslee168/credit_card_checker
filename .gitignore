@@ -1,0 +1,50 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Build directories
+dist/
+.build/
+.next/
+
+# Production environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor or OS-specific files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Jest test coverage
+coverage/
+
+# Temporary files
+tmp/
+temp/
+
+# Linting and formatting caches
+.eslintcache
+.prettiercache
+
+# Optional npm cache directory
+.npm
+
+# Parcel-bundler cache (if used)
+.cache/
+
+# TypeScript cache (if used)
+*.tsbuildinfo
