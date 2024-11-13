@@ -7,7 +7,7 @@ import { Facebook, Twitter, Instagram } from 'lucide-react'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'SecuraSense',
+  title: 'Precog.ai',
   description: 'Compliance Made Simple',
 }
 
@@ -53,7 +53,7 @@ export default function RootLayout({
         {/* Footer */}
         <footer className="bg-cyan-700 text-white py-4 fade-in">
           <div className="container mx-auto px-4 flex justify-between items-center">
-            <p>&copy; 2024 SecuraSense. All rights reserved.</p>
+            <p>&copy; 2024 Precog.ai. All rights reserved.</p>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-cyan-200"><Facebook size={24} /></a>
               <a href="#" className="hover:text-cyan-200"><Twitter size={24} /></a>
